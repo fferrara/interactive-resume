@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Circle } from './circle.component';
 
 @Component({
   selector: 'app-factors',

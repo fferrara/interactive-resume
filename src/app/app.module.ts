@@ -8,6 +8,7 @@ import { CoverComponent } from './cover/cover.component';
 import { ChatComponent } from './chat/chat.component';
 import { FactorsComponent } from './factors/factors.component';
 import { ScrollFixDirective } from './scroll-fix.directive';
+import { Circle } from './factors/circle.component.ts';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ScrollFixDirective } from './scroll-fix.directive';
     CoverComponent,
     ChatComponent,
     FactorsComponent,
-    ScrollFixDirective
+    ScrollFixDirective,
+    Circle
   ],
   imports: [
     BrowserModule,
