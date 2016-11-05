@@ -6,12 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CoverComponent } from './cover/cover.component';
 import { ChatComponent } from './chat/chat.component';
+import { FactorsComponent } from './factors/factors.component';
+import { ScrollFixDirective } from './scroll-fix.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoverComponent,
-    ChatComponent
+    ChatComponent,
+    FactorsComponent,
+    ScrollFixDirective
   ],
   imports: [
     BrowserModule,

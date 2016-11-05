@@ -1,0 +1,25 @@
+.chat {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.chat-scrolling {
+  margin-top: 30%;
+}
+
+.chat-stick {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: 0;
+  /* center all inline content */
+  text-align: center;
+}
+
+.chat-box {
+  /* make the block inline */
+  display: inline-block;
+  /* reset container's center alignment */
+  text-align: left;
+}
