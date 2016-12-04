@@ -1,4 +1,9 @@
 .factors {
-  height: 600px;
+  height: 700px;
   background-color: red;
+}
+
+.factors .container {
+  height: 100%;
+  position: relative;
 }

@@ -1,18 +1,26 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: '[appCircle]',
+  selector: 'f-circle',
   template: `
-    <svg:circle [attr.r]="radius" [attr.cx]="cx" [attr.cy]="cy"></svg:circle>
-  `
+    <div class="circle" [ngClass]="position"></div>
+  `,
+  styles: [
+    `.circle { width: 40%; height: 0; padding-bottom: 40%; position: absolute;border-radius: 50%;background: rgba(0, 255, 0, 0.3); }
+      .left { top: 10%; left: 20%; }
+      .right { right: 20%; top: 10%;}
+      .bottom { top: 30%; left: 30%}
+    `
+  ]
 })
-export class Circle {
+export class Circle implements OnInit {
+  ngOnInit(): void {
+  }
+
   @Input()
-  radius = 70;
-  @Input()
-  cx = 140;
-  @Input()
-  cy = 70;
-  constructor() { }
+  position;
+
+  constructor() {
+  }
 
 }

@@ -9,8 +9,10 @@ export class ScrollFixDirective {
 
   @HostListener('window:scroll', ['$event'])
   doSomething(event) {
-    console.log(document.body.scrollTop);
-    if (document.body.scrollTop > 400) {
+    let height = window.innerHeight;
+    console.log(height);
+    let offset = event.view.pageYOffset;
+    if (offset > height*0.35) {
       this._elementRef.nativeElement.classList.remove('chat-scrolling');
       this._elementRef.nativeElement.classList.add('chat-stick');
     } else {

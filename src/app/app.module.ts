@@ -8,16 +8,19 @@ import { CoverComponent } from './cover/cover.component';
 import { ChatComponent } from './chat/chat.component';
 import { FactorsComponent } from './factors/factors.component';
 import { ScrollFixDirective } from './scroll-fix.directive';
-import { Circle } from './factors/circle.component.ts';
+import { Circle } from './factors/circle.component';
+import { StoryComponent } from './story/story.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoverComponent,
+    StoryComponent,
     ChatComponent,
     FactorsComponent,
     ScrollFixDirective,
-    Circle
+    Circle,
+    StoryComponent
   ],
   imports: [
     BrowserModule,
