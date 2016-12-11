@@ -1,0 +1,60 @@
+.circle {
+  width: 40%;
+  height: 0;
+  padding-bottom: 40%;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 2em;
+  font-variant: all-small-caps;
+}
+
+.circle:hover {
+  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+  z-index: 99999;
+}
+
+.left .circle {
+  top: 10%;
+  left: 20%;
+  border: 1px solid green;
+}
+
+.right .circle {
+  right: 20%;
+  top: 10%;
+  border: 1px solid red;
+}
+
+.bottom .circle {
+  top: 30%;
+  left: 30%;
+  border: 1px solid blue;
+}
+
+.left .label {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+
+  color: green;
+}
+
+.right .label {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+
+  color: red;
+}
+
+.bottom .label {
+  position: absolute;
+  left:45%;
+  bottom: 10%;
+
+  color: blue;
+}

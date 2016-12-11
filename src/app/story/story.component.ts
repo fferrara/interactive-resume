@@ -1,4 +1,4 @@
-import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+import {Component, OnInit, trigger, state, style, transition, animate} from '@angular/core';
 
 @Component({
   selector: 'app-story',
@@ -6,11 +6,11 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
   styleUrls: ['./story.component.css'],
   animations: [
     trigger('visibilityChanged', [
-      state('visible' , style({ visibility: 'visible', opacity: 1 })),
-      state('hidden', style({ visibility: 'hidden', opacity: 0 })),
+      state('visible', style({visibility: 'visible', opacity: 1})),
+      state('hidden', style({visibility: 'hidden', opacity: 0})),
       transition('hidden => visible', animate('.8s'))
-])
-]
+    ])
+  ]
 })
 export class StoryComponent implements OnInit {
   private pasta = 'hidden';
@@ -19,7 +19,9 @@ export class StoryComponent implements OnInit {
   private exchange = 'hidden';
   private college = 'hidden';
   private roadTrip = 'hidden';
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
     setTimeout(() => {
@@ -41,7 +43,6 @@ export class StoryComponent implements OnInit {
       this.roadTrip = 'visible';
     }, 4500);
   }
-
 
 
 }

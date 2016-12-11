@@ -1,26 +1,29 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {
+  Component, Input, OnInit, HostListener, ElementRef, trigger, state, style, transition,
+  animate
+} from '@angular/core';
 
 @Component({
   selector: 'f-circle',
   template: `
-    <div class="circle" [ngClass]="position"></div>
+    <div  [ngClass]="position">
+    <span class="label">{{label}}</span>
+    <div class="circle">
+    </div>
+    </div>
   `,
-  styles: [
-    `.circle { width: 40%; height: 0; padding-bottom: 40%; position: absolute;border-radius: 50%;background: rgba(0, 255, 0, 0.3); }
-      .left { top: 10%; left: 20%; }
-      .right { right: 20%; top: 10%;}
-      .bottom { top: 30%; left: 30%}
-    `
-  ]
+  styleUrls: ['./circle.component.css'],
 })
 export class Circle implements OnInit {
   ngOnInit(): void {
   }
 
   @Input()
-  position;
+  position:string;
+  @Input()
+  label:string;
 
-  constructor() {
+  constructor(private el: ElementRef) {
   }
 
 }

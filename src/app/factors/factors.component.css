@@ -1,6 +1,7 @@
 .factors {
-  height: 700px;
-  background-color: red;
+  height: 850px;
+  padding-top: 30px;
+  background-color: burlywood;
 }
 
 .factors .container {
