@@ -1,0 +1,7 @@
+.skills svg {
+  width: 100%;
+}
+
+.special:hover {
+  opacity: 0.5;
+}

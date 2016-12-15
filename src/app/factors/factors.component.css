@@ -1,10 +1,38 @@
 .factors {
-  height: 850px;
+  height: 650px;
   padding-top: 30px;
-  background-color: burlywood;
+  background-color: antiquewhite;
 }
 
 .factors .container {
   height: 100%;
   position: relative;
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 2em;
+  font-variant: all-small-caps;
+}
+
+.label.left {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+
+  color: rgb(180, 160, 87);
+}
+
+
+.label.right {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+
+  color: rgb(177, 46, 36);
 }

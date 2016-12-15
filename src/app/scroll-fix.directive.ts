@@ -10,7 +10,6 @@ export class ScrollFixDirective {
   @HostListener('window:scroll', ['$event'])
   doSomething(event) {
     let height = window.innerHeight;
-    console.log(height);
     let offset = event.view.pageYOffset;
     if (offset > height*0.35) {
       this._elementRef.nativeElement.classList.remove('chat-scrolling');

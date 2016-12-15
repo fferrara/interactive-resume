@@ -6,55 +6,27 @@
   border-radius: 50%;
 }
 
-.label {
-  font-weight: bold;
-  font-size: 2em;
-  font-variant: all-small-caps;
-}
+
 
 .circle:hover {
-  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.6);
   z-index: 99999;
 }
 
 .left .circle {
   top: 10%;
   left: 20%;
-  border: 1px solid green;
+  border: 1px solid rgb(180, 160, 87);
+  background-color: rgba(180, 160, 87, 0.6);
+
 }
 
 .right .circle {
   right: 20%;
   top: 10%;
-  border: 1px solid red;
+  border: 1px solid rgb(177, 46, 36);
+  background-color: rgba(177, 46, 36, 0.6);
 }
 
-.bottom .circle {
-  top: 30%;
-  left: 30%;
-  border: 1px solid blue;
-}
 
-.left .label {
-  position: absolute;
-  top: 20%;
-  left: 5%;
 
-  color: green;
-}
-
-.right .label {
-  position: absolute;
-  top: 20%;
-  right: 10%;
-
-  color: red;
-}
-
-.bottom .label {
-  position: absolute;
-  left:45%;
-  bottom: 10%;
-
-  color: blue;
-}

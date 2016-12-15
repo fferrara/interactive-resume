@@ -10,6 +10,10 @@ import { FactorsComponent } from './factors/factors.component';
 import { ScrollFixDirective } from './scroll-fix.directive';
 import { Circle } from './factors/circle.component';
 import { StoryComponent } from './story/story.component';
+import { ProblemsComponent } from './problems/problems.component';
+import { ScrollEnterDirective } from './scroll-enter.directive';
+import { SkillsComponent } from './skills/skills.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -20,12 +24,16 @@ import { StoryComponent } from './story/story.component';
     FactorsComponent,
     ScrollFixDirective,
     Circle,
-    StoryComponent
+    StoryComponent,
+    ProblemsComponent,
+    ScrollEnterDirective,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

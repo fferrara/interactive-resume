@@ -1,0 +1,19 @@
+<div class="problems">
+  <div class="container">
+    <h1 class="header">I <i class="fa fa-heart"></i> solving problems</h1>
+    <section id="timeline">
+      <div *ngFor="let item of list; let even = even"
+           class="block"
+           scrollEnter="" [baseOffset]="baseOffset" [side]="even && 'left' || 'right'">
+        <div class="img" ngbTooltip="AAAA" placement="top">
+        </div>
+
+        <div class="block-content">
+          <h2 [innerHTML]="item.title"></h2>
+          <p [innerHTML]="item.text"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
