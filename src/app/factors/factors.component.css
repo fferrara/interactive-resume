@@ -21,18 +21,18 @@
 }
 
 .label.left {
-  position: absolute;
-  top: 20%;
-  left: 5%;
 
   color: rgb(180, 160, 87);
 }
 
 
 .label.right {
-  position: absolute;
-  top: 20%;
-  right: 10%;
 
   color: rgb(177, 46, 36);
+}
+
+ul.adjs {
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
 }
