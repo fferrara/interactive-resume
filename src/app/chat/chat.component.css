@@ -1,7 +1,23 @@
-.chat {
-  width: 80%;
-  margin: 0 auto;
+.chat ul {
+  list-style: none;
+  padding-left: 0;
 }
+
+.chat ul > li {
+  margin-bottom: 5px;
+  animation-duration: .3s;
+  -webkit-animation-duration: .3s;
+  -moz-animation-duration: .3s;
+}
+
+.message {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: aliceblue;
+  border-radius: 5px 0 5px 0;
+  box-shadow: 2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+}
+
 
 .chat-scrolling {
   padding-top: 5%;

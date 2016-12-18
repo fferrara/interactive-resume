@@ -1,5 +1,15 @@
-<div class="chat chat-scrolling" scrollFix>
-  <input type="text" class="form-control chat-box"
-         placeholder="What would you like to ask me?">
+<div class="chat chat-scrolling">
+  <ul>
+    <li *ngFor="let message of messages"
+    class="animated pulse">
+      <p class="message">{{message | async}}</p>
+    </li>
+  </ul>
+  <div class="row chat-box-container">
+    <div class="col-xs-12 col-md-6 offset-md-6">
+      <input type="text" class="form-control chat-box"
+             placeholder="Please, feel free to express yourself!">
+    </div>
+  </div>
 </div>
 
