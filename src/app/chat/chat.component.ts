@@ -18,16 +18,17 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
-    let writing = false;
     this.chatService.messageStream
-      .map(
-        message => Observable
-          .from(message)
-          .scan((acc, curr) => acc + curr)
-          .zip(Observable.interval(25), x => x)
+      .zip(Observable.interval(2500), message => message)
+      .startWith('Hey there!')
+      .map(message => Observable
+        .from(message)
+        .scan((acc, curr) => acc + curr)
+        .zip(Observable.interval(25), x => x)
       ).subscribe(m => {
-        this.messages.push(m)
-    });
+        this.messages.push(m);
+    })
+
   }
 
 

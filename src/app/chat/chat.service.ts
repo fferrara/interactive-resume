@@ -5,7 +5,7 @@ import {Observable, Subject, BehaviorSubject} from "rxjs";
 export class ChatService {
 
   data = [
-    'Hey there! How are you doing? Tired of classic boring résumés too?',
+    'How are you doing? Tired of classic boring résumés too?',
     'Well, welcome to the only résumé in town that answers to your questions!',
     'What are you interested in?'
   ];
@@ -15,7 +15,7 @@ export class ChatService {
   constructor() {
     this.data.forEach((m, i) => setTimeout(() => {
       this.webSocket.next(m);
-    }, 1000*i));
+    }, 500*i));
   }
 
 }
