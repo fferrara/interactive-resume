@@ -7,13 +7,14 @@ import { AppComponent } from './app.component';
 import { CoverComponent } from './cover/cover.component';
 import { ChatComponent } from './chat/chat.component';
 import { FactorsComponent } from './factors/factors.component';
-import { ScrollFixDirective } from './scroll-fix.directive';
+import { ScrollFixDirective } from './directives/scroll-fix.directive';
 import { Circle } from './factors/circle.component';
 import { StoryComponent } from './story/story.component';
 import { ProblemsComponent } from './problems/problems.component';
-import { ScrollEnterDirective } from './scroll-enter.directive';
+import { ScrollEnterDirective } from './directives/scroll-enter.directive';
 import { SkillsComponent } from './skills/skills.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {WebSocketService} from "./services/web-socket.service";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     HttpModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

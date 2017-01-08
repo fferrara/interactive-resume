@@ -7,8 +7,12 @@
   </ul>
   <div class="row chat-box-container">
     <div class="col-xs-12 col-md-6 offset-md-6">
-      <input type="text" class="form-control chat-box"
-             placeholder="Please, feel free to express yourself!">
+      <form (submit)="submit()">
+        <input type="text" class="form-control chat-box"
+               name="message" [(ngModel)]="message"
+               required
+               placeholder="Please, feel free to express yourself!">
+      </form>
     </div>
   </div>
 </div>

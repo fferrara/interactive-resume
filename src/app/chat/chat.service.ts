@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Observable, Subject, BehaviorSubject} from "rxjs";
+import {WebSocketService} from "../services/web-socket.service";
+import {Observable, Subject} from "rxjs";
 
 @Injectable()
 export class ChatService {
@@ -9,13 +10,18 @@ export class ChatService {
     'Well, welcome to the only résumé in town that answers to your questions!',
     'What are you interested in?'
   ];
-  private webSocket: Subject<string> = new Subject<string>();
-  public messageStream = this.webSocket.asObservable();
+  public messageStream: Subject<string>;
 
-  constructor() {
-    this.data.forEach((m, i) => setTimeout(() => {
-      this.webSocket.next(m);
-    }, 500*i));
+  constructor(ws : WebSocketService) {
+    this.messageStream = <Subject<string>> ws.connect()
+      .map((msg:MessageEvent) =>
+        JSON.stringify(msg.data)
+      )
+
+  }
+
+  public send(message:string){
+    this.messageStream.next(message);
   }
 
 }

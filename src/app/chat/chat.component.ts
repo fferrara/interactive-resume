@@ -11,6 +11,7 @@ import {ChatService} from "./chat.service";
 export class ChatComponent implements OnInit {
 
   messages: Array<Observable<string>>;
+  message: string;
 
   constructor(private chatService: ChatService) {
     this.messages = [];
@@ -28,7 +29,10 @@ export class ChatComponent implements OnInit {
       ).subscribe(m => {
         this.messages.push(m);
     })
+  }
 
+  public submit(){
+    this.chatService.send(this.message)
   }
 
 
