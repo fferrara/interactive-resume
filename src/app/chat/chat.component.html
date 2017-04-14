@@ -1,14 +1,11 @@
-<div class="chat-container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 offset-md-2">
+<div class="chat-container" #chat [scrollTop]="chat.scrollHeight">
+  <div class="clearfix">
+    <div class="col-12">
       <div class="chat">
-        <div class="avatar" *ngIf="chatMessages.length > 0">
-          <img class="centered img-fluid rounded-circle" src="assets/img/avatar.png">
-        </div>
-        <ul class="chat-body">
+        <ul class="chat-body list-group">
           <li *ngFor="let message of chatMessages"
-              class="animated pulse" [ngClass]="{mine: message.isMine}">
-            <p class="message" >{{message.message}}</p>
+              class="animated fadeIn message-container" [ngClass]="{mine: message.isMine}">
+            <p class="message" [innerHTML]="message.message"></p>
           </li>
         </ul>
       </div>
