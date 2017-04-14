@@ -1,3 +1,88 @@
 .cover {
-  height: 100%;
+  position: fixed;
+  font-size: .8em;
+
+  font-family: 'Raleway', sans-serif;
+  padding-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .cover {
+    position: relative;
+  }
+}
+
+.cover ul > li {
+  border: 0;
+}
+
+
+.cover .list-group {
+  margin-bottom: 0;
+}
+
+.cover .list-group-item {
+  padding: 5px 10px;
+}
+
+.my-picture {
+  max-width: 100px;
+}
+
+.my-description {
+  display: inline-block;
+}
+
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
+
+.icon {
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  margin-right: 10px;
+  width: 34px;
+  line-height: 14px;
+  text-align: center;
+}
+
+.icon.mail-icon {
+   background-color: #ee7565;
+ }
+
+.icon.location-icon {
+   background-color: #EEA14B;
+ }
+
+.icon.phone-icon {
+   background-color: #88C057;
+ }
+
+.icon.linkedin-icon {
+   background-color: #0077B5;
+ }
+
+.icon.github-icon {
+   background-color: #6e5494;
+ }
+

@@ -1,37 +1,69 @@
-.chat ul {
-  list-style: none;
+.chat-container {
+  background-color: #F4F4F4;
+  padding-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+ul {
   padding-left: 0;
 }
 
-.chat ul > li {
-  margin-bottom: 5px;
-  animation-duration: .3s;
-  -webkit-animation-duration: .3s;
-  -moz-animation-duration: .3s;
+.message-container {
+  display: block;
+  clear: both;
 }
 
-.message {
+.message-container p.message {
+  background-color: #FFF;
+  padding: 12px;
   display: inline-block;
-  padding: 5px 10px;
-  background-color: aliceblue;
-  border-radius: 5px 0 5px 0;
-  box-shadow: 2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+  position: relative;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+  border-radius: 0 5px 0 5px;
 }
 
+.message-container p.message.mine {
+   background-color: #25ABB0;
+   float: right;
+   color: white;
+   font-style: italic;
+ }
 
-.chat-scrolling {
-  padding-top: 5%;
+
+@media (min-width: 768px) {
+  .message-container p.message {
+    max-width: 80%;
+  }
 }
 
-.chat-stick {
-  position: fixed;
-  top: 10px;
-  left: 0;
-  right: 0;
-  height: 0;
+.emoji {
+  width: 20px;
+}
+
+.shortcut {
   text-align: center;
+  padding: 0 20px;
+  margin-bottom: 5px;
 }
 
-.chat-box {
-  text-align: left;
+.shortcut  a {
+  background-color: #25ABB0;
+  display: block;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 5px 8px;
+  opacity: .6;
 }
+
+.shortcut  a:hover, .shortcut  a:focus {
+  text-decoration: none;
+  opacity: 1;
+}
+
