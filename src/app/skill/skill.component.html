@@ -1,7 +1,16 @@
-<div class="container-fluid">
-  <div class="row form-group vertical-center" id="skills">
-    <div class="col-12 col-sm-6 stars">
-      <h2 class="text-center">Technical skills</h2>
+<div class="container">
+  <div class="row form-group" id="skills">
+    <div class="col">
+      <h1 class="text-center">Technical skills</h1>
+
+    </div>
+    <div class="col">
+      <h1 class="text-center">Less-technical skills</h1>
+    </div>
+
+  </div>
+  <div class="row form-group stars">
+    <div class="col"  style="text-align: center">
       <div class="skills">
         <div class="skill" *ngFor="let skill of tech">
           <span class="stars-name">{{skill.topic}}</span>
@@ -9,17 +18,15 @@
         </div>
       </div>
 
-    </div>
-    <div class="col-12 col-sm-6 stars">
-      <h2 class="text-center">Less-technical skills</h2>
-      <div class="skills">
 
+    </div>
+    <div class="col" style="text-align: center">
+      <div class="skills">
         <div class="skill" *ngFor="let skill of other">
           <span class="stars-name">{{skill.topic}}</span>
           <label *ngFor="let star of makeStars(skill.value)" [ngClass]="star"></label>
         </div>
       </div>
     </div>
-
   </div>
 </div>

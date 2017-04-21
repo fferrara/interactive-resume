@@ -4,13 +4,13 @@ Credits to James Barnett https://codepen.io/jamesbarnett
 
 /****** Style Star Rating Widget *****/
 
-.stars {
-  border: none;
-  float: left;
-}
-
 .stars h2 {
   margin-bottom: 1.5rem;
+}
+
+.skills {
+  display: inline-block;
+  text-align: left;
 }
 
 .stars .skill {

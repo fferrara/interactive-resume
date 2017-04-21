@@ -1,29 +1,10 @@
 .cover {
   font-size: .8em;
+  position: relative;
+  background-color: #F4F4F4;
 
   font-family: 'Raleway', sans-serif;
   padding-top: 20px;
-}
-
-@media (max-width: 768px) {
-  .cover {
-    position: relative;
-  }
-}
-
-@media (min-width: 768px) {
-  .cover {
-    position: fixed;
-    min-height: 100vh;
-    min-height: 100%;
-    width: 32%
-  }
-}
-
-@media (min-width: 992px) {
-  .cover {
-    width: 24%
-  }
 }
 
 .cover ul > li {
@@ -37,6 +18,7 @@
 
 .cover .list-group-item {
   padding: 5px 10px;
+  background-color: transparent;
 }
 
 .my-picture {
