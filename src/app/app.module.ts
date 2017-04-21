@@ -10,6 +10,10 @@ import { ScrollFixDirective } from './directives/scroll-fix.directive';
 import { ScrollEnterDirective } from './directives/scroll-enter.directive';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {WebSocketService} from "./services/web-socket.service";
+import { EducationComponent } from './education/education.component';
+import { WorkComponent } from './work/work.component';
+import { SkillComponent } from './skill/skill.component';
+import { PersonalityComponent } from './personality/personality.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,10 @@ import {WebSocketService} from "./services/web-socket.service";
     ChatComponent,
     ScrollFixDirective,
     ScrollEnterDirective,
+    EducationComponent,
+    WorkComponent,
+    SkillComponent,
+    PersonalityComponent,
   ],
   imports: [
     BrowserModule,

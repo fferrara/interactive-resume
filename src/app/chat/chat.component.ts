@@ -18,7 +18,7 @@ export class ChatComponent implements OnInit {
   chatMessages: Array<ChatMessage>;
   question: Question;
   answer: string;
-  choices: Array<string>;
+  choices: Array<string> = [];
   private showAnswer = false;
   writing = false;
 
@@ -32,28 +32,11 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this.chatService.messageStream
-     .zip(Observable.interval(1500), message => message)
-     .startWith(this.greeting)
-     .filter(message => message != null)
-     .subscribe(m => {
-     this.chatMessages.push({
-     message: m.message,
-     isMine: false
-     });
-
-     this.showAnswer = this.checkNeedAnswer();
-     });*/
-
     let delayed = this.chatService.messageStream
       .startWith(this.greeting)
       .map(m => {
         return Observable.of(m).delay(1500);
       }).concatAll();
-/*
-    let delayed = this.chatService.messageStream
-      .zip(Observable.interval(2500), message => message)
-      .startWith(this.greeting);*/
 
     delayed
       .filter(message => message != null)

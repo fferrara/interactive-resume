@@ -1,5 +1,4 @@
 .cover {
-  position: fixed;
   font-size: .8em;
 
   font-family: 'Raleway', sans-serif;
@@ -9,6 +8,21 @@
 @media (max-width: 768px) {
   .cover {
     position: relative;
+  }
+}
+
+@media (min-width: 768px) {
+  .cover {
+    position: fixed;
+    min-height: 100vh;
+    min-height: 100%;
+    width: 32%
+  }
+}
+
+@media (min-width: 992px) {
+  .cover {
+    width: 24%
   }
 }
 
@@ -85,4 +99,24 @@
 .icon.github-icon {
    background-color: #6e5494;
  }
+
+.shortcut {
+  padding: 0 20px;
+  margin-bottom: 5px;
+}
+
+.shortcut a {
+  background-color: #25ABB0;
+  display: block;
+  border-radius: 20px;
+  font-weight: 700;
+  color: #fff;
+  padding: 5px 8px;
+  opacity: .6;
+}
+
+.shortcut a:hover, a:focus {
+  text-decoration: none;
+  opacity: 1;
+}
 

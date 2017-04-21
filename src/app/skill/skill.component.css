@@ -1,0 +1,53 @@
+/**
+Credits to James Barnett https://codepen.io/jamesbarnett
+ */
+
+/****** Style Star Rating Widget *****/
+
+.stars {
+  border: none;
+  float: left;
+}
+
+.stars h2 {
+  margin-bottom: 1.5rem;
+}
+
+.stars .skill {
+  white-space: nowrap;
+  padding: 0 12px;
+  margin-right: 10px;
+
+}
+
+.stars .skill > span {
+  display: inline-block;
+  min-width: 50%;
+  margin-right: 20px;
+}
+
+.stars .skill > label {
+  color: #FFD700;
+}
+
+.stars .skill > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.stars .skill > .half:before {
+  content: "\f089";
+}
+
+@media (max-width: 768px){
+  .stars .skill {
+    padding: 0;
+  }
+
+  .stars .skill > label {
+    font-size: .8em;
+  }
+}

@@ -24,7 +24,7 @@
           <button class="btn btn-sm choice-button" (click)="submitChoice(choice)">{{choice}}</button>
         </li>
       </ul>
-      <form (submit)="submitAnswer()">
+      <form (submit)="submitAnswer()"  *ngIf="choices.length == 0">
         <input type="text" class="form-control chat-box"
                name="message" [(ngModel)]="answer"
                required
