@@ -33,7 +33,7 @@ import { PersonalityComponent } from './personality/personality.component';
     HttpModule,
     NgbModule.forRoot()
   ],
-  providers: [WebSocketService],
+  providers: [WebSocketService, { provide: "windowObject", useValue: window}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

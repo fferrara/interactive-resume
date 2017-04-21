@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewChild, Inject} from "@angular/core";
 import {Observable} from "rxjs";
 import {ChatService, Question, Message} from "./chat.service";
 
@@ -15,6 +15,7 @@ interface ChatMessage {
 })
 export class ChatComponent implements OnInit {
 
+  private window : Window;
   chatMessages: Array<ChatMessage>;
   question: Question;
   answer: string;
@@ -26,8 +27,9 @@ export class ChatComponent implements OnInit {
     message: 'Hey there!'
   };
 
-  constructor(private chatService: ChatService) {
+  constructor(private chatService: ChatService, @Inject("windowObject") window: Window) {
     this.chatMessages = [];
+    this.window = window;
     this.chatService = chatService;
   }
 
@@ -41,6 +43,10 @@ export class ChatComponent implements OnInit {
     delayed
       .filter(message => message != null)
       .subscribe(m => {
+        this.isContainerFull() &&
+          this.window.scrollBy({ top: 100, left: 0, behavior: 'smooth' });
+
+
         this.chatMessages.push({
           message: m.message,
           isMine: false
@@ -53,7 +59,11 @@ export class ChatComponent implements OnInit {
       this.question = q;
       this.choices = q.choices;
       this.showAnswer = this.checkNeedAnswer();
-    })
+    });
+  }
+
+  private isContainerFull() {
+    return (150 + this.chatMessages.length * 60) > this.window.innerHeight;
   }
 
   public submitAnswer() {

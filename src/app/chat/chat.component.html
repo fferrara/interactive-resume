@@ -1,5 +1,5 @@
-<div class="chat-container" #chat [scrollTop]="chat.scrollHeight">
-  <div class="clearfix">
+<div class="chat-container container-fluid">
+  <div class="row">
     <div class="col-12">
       <div class="chat">
         <ul class="chat-body list-group">
@@ -17,20 +17,18 @@
     </div>
   </div>
 
-  <div class="row" *ngIf="showAnswer">
-    <div class="col-xs-12 col-md-6 offset-md-3">
-      <ul class="list-inline choices-container">
-        <li class="list-inline-item" *ngFor="let choice of choices">
-          <button class="btn btn-sm choice-button" (click)="submitChoice(choice)">{{choice}}</button>
-        </li>
-      </ul>
+  <div class="user-input" *ngIf="showAnswer">
+      <div class="row">
+        <div class="col" *ngFor="let choice of choices">
+          <a class="choice-button" href="" (click)="submitChoice(choice)">{{choice}}</a>
+        </div>
+      </div>
       <form (submit)="submitAnswer()"  *ngIf="choices.length == 0">
         <input type="text" class="form-control chat-box"
                name="message" [(ngModel)]="answer"
                required
                placeholder="Please, feel free to express yourself!">
       </form>
-    </div>
   </div>
 </div>
 

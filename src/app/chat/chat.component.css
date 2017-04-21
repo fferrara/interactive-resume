@@ -1,10 +1,14 @@
 .chat-container {
   background-color: #F4F4F4;
-  padding: 25px 0;
+  padding-top: 25px;
   min-height: 100%;
-  overflow-y: auto;
+  min-height: 100vh;
+  overflow-y: visible;
   overflow-x: hidden;
-  height: 100vh;
+}
+
+.chat {
+  margin-bottom: 120px;
 }
 
 @media (max-width: 768px) {
@@ -25,7 +29,7 @@ ul {
 
 .message-container p.message {
   background-color: #FFF;
-  padding: 12px;
+  padding: 8px 12px;
   display: inline-block;
   position: relative;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
@@ -44,6 +48,29 @@ ul {
   width: 100%;
   font-style: italic;
   font-size: .8em;
+}
+
+.user-input {
+  position: absolute;
+  bottom: 25px;
+  left: 10%;
+  width: 80%;
+}
+
+.choice-button {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+  border-radius: 0 5px 0 5px;
+  background-color: #25ABB0;
+  display: block;
+  font-weight: bold;
+  color: white;
+  padding: 5px 8px;
+  opacity: .6;
+}
+
+.choice-button:hover, .choice-button:focus {
+  opacity: 1;
+  text-decoration: none;
 }
 
 
