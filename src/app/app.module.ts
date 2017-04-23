@@ -16,6 +16,7 @@ import { SkillComponent } from './skill/skill.component';
 import { PersonalityComponent } from './personality/personality.component';
 
 import { Ng2EmojiModule } from 'ng2-emoji';
+import { WritingComponent } from './chat/writing/writing.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { Ng2EmojiModule } from 'ng2-emoji';
     WorkComponent,
     SkillComponent,
     PersonalityComponent,
+    WritingComponent,
   ],
   imports: [
     BrowserModule,

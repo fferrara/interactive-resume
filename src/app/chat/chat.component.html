@@ -8,12 +8,8 @@
             <p class="message" [innerHTML]="message.message | emojis"></p>
           </li>
         </ul>
+        <app-writing *ngIf="isWriting"></app-writing>
       </div>
-    </div>
-  </div>
-  <div class="row" *ngIf="writing">
-    <div class="col-xs-12 col-md-8 offset-md-2 writing">
-      Is writing...
     </div>
   </div>
 

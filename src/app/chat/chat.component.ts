@@ -24,9 +24,10 @@ export class ChatComponent implements OnInit {
   answer: string;
   choices: Array<string> = [];
   showAnswer = false;
-  writing = false;
+  isWriting = false;
 
-  placeholder: string = 'Start with something simple like: Where have you worked?';
+  placeholder: string = null;
+  firstPlaceholder: string = 'Start with something simple like: Where have you worked?'
   placeholders: Array<string> = [
     'Something about my skills?',
     'Something about my education?',
@@ -45,12 +46,12 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     let delayed = this.chatService.messageStream
-      .startWith(this.greeting)
       .map(m => {
-        return Observable.of(m).delay(1100);
+        return Observable.of(m).delay(1800);
       }).concatAll();
 
     delayed
+      .startWith(this.greeting)
       .filter(message => message != null)
       .subscribe(m => {
 
@@ -64,6 +65,7 @@ export class ChatComponent implements OnInit {
         });
 
       this.showAnswer = this.checkNeedAnswer();
+      this.placeholder = this.getPlaceholder();
     });
 
     this.chatService.questionStream.subscribe(q => {
@@ -101,12 +103,15 @@ export class ChatComponent implements OnInit {
     if (this.chatMessages.length == 0) return false;
     let last = this.chatMessages[this.chatMessages.length - 1];
     let needAnswer = this.question && last.message == this.question.message;
-    this.writing = !needAnswer;
-
-    if (needAnswer && this.isContainerFull())
-      this.placeholder = this.placeholders[Math.floor(Math.random() * this.placeholders.length)];
+    this.isWriting = !needAnswer;
 
     return needAnswer;
+  }
+
+  private getPlaceholder(){
+    if (this.showAnswer === false || this.choices.length != 0) return null;
+
+    return this.placeholder === null && this.firstPlaceholder || this.placeholders[Math.floor(Math.random() * this.placeholders.length)];
   }
 
 
