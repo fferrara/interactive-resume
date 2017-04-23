@@ -1,4 +1,4 @@
-import {Component, OnInit, Inject} from "@angular/core";
+import {Component, OnInit, Inject, ViewChild, ElementRef} from "@angular/core";
 import {Observable} from "rxjs";
 import {ChatService, Question} from "./chat.service";
 
@@ -15,6 +15,9 @@ interface ChatMessage {
 })
 export class ChatComponent implements OnInit {
 
+  @ViewChild('chatContainer')
+  chatContainer: ElementRef;
+
   private window;
   chatMessages: Array<ChatMessage>;
   question: Question;
@@ -23,6 +26,13 @@ export class ChatComponent implements OnInit {
   showAnswer = false;
   writing = false;
 
+  placeholder: string = 'Start with something simple like: Where have you worked?';
+  placeholders: Array<string> = [
+    'Something about my skills?',
+    'Something about my education?',
+    'Something about the projects I carried out?',
+    'Something about my character?'
+  ]
   greeting = {
     message: 'Hey there!'
   };
@@ -37,7 +47,7 @@ export class ChatComponent implements OnInit {
     let delayed = this.chatService.messageStream
       .startWith(this.greeting)
       .map(m => {
-        return Observable.of(m).delay(1500);
+        return Observable.of(m).delay(1100);
       }).concatAll();
 
     delayed
@@ -64,7 +74,7 @@ export class ChatComponent implements OnInit {
   }
 
   private isContainerFull() {
-    return (150 + this.chatMessages.length * 60) > window.innerHeight;
+    return this.chatContainer.nativeElement.scrollHeight > window.innerHeight;
   }
 
   public submitAnswer() {
@@ -92,6 +102,10 @@ export class ChatComponent implements OnInit {
     let last = this.chatMessages[this.chatMessages.length - 1];
     let needAnswer = this.question && last.message == this.question.message;
     this.writing = !needAnswer;
+
+    if (needAnswer && this.isContainerFull())
+      this.placeholder = this.placeholders[Math.floor(Math.random() * this.placeholders.length)];
+
     return needAnswer;
   }
 

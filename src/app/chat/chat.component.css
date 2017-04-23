@@ -5,6 +5,7 @@
   min-height: 100vh;
   overflow-y: visible;
   overflow-x: hidden;
+  height: auto;
 }
 
 .chat {
@@ -53,8 +54,8 @@ ul {
 .user-input {
   position: absolute;
   bottom: 25px;
-  left: 10%;
-  width: 80%;
+  left: 20%;
+  width: 60%;
 }
 
 .choice-button {

@@ -1,4 +1,4 @@
-<div class="chat-container container-fluid">
+<div class="chat-container container-fluid" #chatContainer>
   <div class="row">
     <div class="col-12">
       <div class="chat">
@@ -20,14 +20,14 @@
   <div class="user-input" *ngIf="showAnswer">
       <div class="row">
         <div class="col" *ngFor="let choice of choices">
-          <a class="choice-button" href="javascript:void(0)" (click)="submitChoice(choice)">{{choice}}</a>
+          <a class="choice-button" href="javascript:void(0)" (click)="submitChoice(choice)" [innerHTML]="choice | emojis"></a>
         </div>
       </div>
       <form (submit)="submitAnswer()"  *ngIf="choices.length == 0">
         <input type="text" class="form-control chat-box"
                name="message" [(ngModel)]="answer"
                required
-               placeholder="Please, feel free to express yourself!">
+               placeholder="{{placeholder}}">
       </form>
   </div>
 </div>
