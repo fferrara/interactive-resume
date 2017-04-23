@@ -5,7 +5,7 @@
         <ul class="chat-body list-group">
           <li *ngFor="let message of chatMessages"
               class="animated fadeIn message-container" [ngClass]="{mine: message.isMine}">
-            <p class="message" [innerHTML]="message.message"></p>
+            <p class="message" [innerHTML]="message.message | emojis"></p>
           </li>
         </ul>
       </div>
@@ -20,7 +20,7 @@
   <div class="user-input" *ngIf="showAnswer">
       <div class="row">
         <div class="col" *ngFor="let choice of choices">
-          <a class="choice-button" href="" (click)="submitChoice(choice)">{{choice}}</a>
+          <a class="choice-button" href="javascript:void(0)" (click)="submitChoice(choice)">{{choice}}</a>
         </div>
       </div>
       <form (submit)="submitAnswer()"  *ngIf="choices.length == 0">

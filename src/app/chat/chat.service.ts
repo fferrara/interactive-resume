@@ -56,11 +56,4 @@ export class ChatService {
     });
   }
 
-  public sendChoice(message: string) {
-    this.dataStream.next({
-      type: 'CHOICE',
-      text: message
-    });
-  }
-
 }

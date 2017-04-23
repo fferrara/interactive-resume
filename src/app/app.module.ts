@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, OpaqueToken} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -14,6 +14,9 @@ import { EducationComponent } from './education/education.component';
 import { WorkComponent } from './work/work.component';
 import { SkillComponent } from './skill/skill.component';
 import { PersonalityComponent } from './personality/personality.component';
+
+import { Ng2EmojiModule } from 'ng2-emoji';
+
 
 @NgModule({
   declarations: [
@@ -31,9 +34,11 @@ import { PersonalityComponent } from './personality/personality.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+
+    Ng2EmojiModule.forRoot()
   ],
-  providers: [WebSocketService, { provide: "windowObject", useValue: window}],
+  providers: [WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

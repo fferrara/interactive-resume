@@ -1,9 +1,3 @@
-@media (min-width: 768px){
-  .row {
-    height: 100vh;
-  }
-}
-
 .thumbnail-caption h4 {
   margin-bottom: 1.5rem;
 }

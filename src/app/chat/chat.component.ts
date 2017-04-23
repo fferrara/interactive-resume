@@ -1,6 +1,6 @@
-import {Component, OnInit, ViewChild, Inject} from "@angular/core";
+import {Component, OnInit, Inject} from "@angular/core";
 import {Observable} from "rxjs";
-import {ChatService, Question, Message} from "./chat.service";
+import {ChatService, Question} from "./chat.service";
 
 interface ChatMessage {
   message: string,
@@ -15,19 +15,19 @@ interface ChatMessage {
 })
 export class ChatComponent implements OnInit {
 
-  private window : Window;
+  private window;
   chatMessages: Array<ChatMessage>;
   question: Question;
   answer: string;
   choices: Array<string> = [];
-  private showAnswer = false;
+  showAnswer = false;
   writing = false;
 
   greeting = {
     message: 'Hey there!'
   };
 
-  constructor(private chatService: ChatService, @Inject("windowObject") window: Window) {
+  constructor(private chatService: ChatService) {
     this.chatMessages = [];
     this.window = window;
     this.chatService = chatService;
@@ -43,8 +43,9 @@ export class ChatComponent implements OnInit {
     delayed
       .filter(message => message != null)
       .subscribe(m => {
+
         this.isContainerFull() &&
-          this.window.scrollBy({ top: 100, left: 0, behavior: 'smooth' });
+          window.scrollBy({ top: 100, left: 0, behavior: 'smooth' });
 
 
         this.chatMessages.push({
@@ -63,7 +64,7 @@ export class ChatComponent implements OnInit {
   }
 
   private isContainerFull() {
-    return (150 + this.chatMessages.length * 60) > this.window.innerHeight;
+    return (150 + this.chatMessages.length * 60) > window.innerHeight;
   }
 
   public submitAnswer() {
