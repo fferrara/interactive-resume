@@ -17,7 +17,9 @@ import { PersonalityComponent } from './personality/personality.component';
 
 import { WritingComponent } from './chat/writing/writing.component';
 import {EmojiModule} from "angular-emojione";
+import {Routes, RouterModule} from "@angular/router";
 
+const appRoutes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import {EmojiModule} from "angular-emojione";
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot(appRoutes),
 
     EmojiModule,
     NgbModule.forRoot(),

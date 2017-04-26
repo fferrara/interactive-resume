@@ -13,7 +13,10 @@
     "outDir": "../out-tsc/app",
     "module": "es2015",
     "baseUrl": "",
-    "types": []
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [ "google.analytics" ]
   },
   "exclude": [
     "test.ts",
