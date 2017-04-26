@@ -23,8 +23,8 @@ export class ChatComponent implements OnInit {
   question: Question;
   answer: string;
   choices: Array<string> = [];
-  showAnswer = false;
-  isWriting = false;
+  showAnswer:boolean = false;
+  isWriting:boolean = false;
 
   placeholder: string = null;
   firstPlaceholder: string = 'Start with something simple like: Where have you worked?'
@@ -41,13 +41,14 @@ export class ChatComponent implements OnInit {
   constructor(private chatService: ChatService) {
     this.chatMessages = [];
     this.window = window;
+    this.showAnswer = false;
     this.chatService = chatService;
   }
 
   ngOnInit() {
     let delayed = this.chatService.messageStream
       .map(m => {
-        return Observable.of(m).delay(1800);
+        return Observable.of(m).delay(2200);
       }).concatAll();
 
     delayed
@@ -56,7 +57,7 @@ export class ChatComponent implements OnInit {
       .subscribe(m => {
 
         this.isContainerFull() &&
-          window.scrollBy({ top: 100, left: 0, behavior: 'smooth' });
+          window.scrollBy({ top: 90, left: 0, behavior: 'smooth' });
 
 
         this.chatMessages.push({
@@ -102,14 +103,14 @@ export class ChatComponent implements OnInit {
   private checkNeedAnswer() {
     if (this.chatMessages.length == 0) return false;
     let last = this.chatMessages[this.chatMessages.length - 1];
-    let needAnswer = this.question && last.message == this.question.message;
+    let needAnswer = this.question && last.message == this.question.message || false;
     this.isWriting = !needAnswer;
 
     return needAnswer;
   }
 
   private getPlaceholder(){
-    if (this.showAnswer === false || this.choices.length != 0) return null;
+    if (this.showAnswer === false || this.choices.length != 0) return this.placeholder;
 
     return this.placeholder === null && this.firstPlaceholder || this.placeholders[Math.floor(Math.random() * this.placeholders.length)];
   }

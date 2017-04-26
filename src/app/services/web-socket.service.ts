@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {Subject, Observable, Observer} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class WebSocketService {
   private socket: Subject<MessageEvent>;
-  public URL:string = 'ws://localhost:9000';
+  public URL:string = environment.backend_url;
 
   constructor() { }
 

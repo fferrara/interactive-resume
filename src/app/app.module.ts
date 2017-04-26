@@ -15,8 +15,8 @@ import { WorkComponent } from './work/work.component';
 import { SkillComponent } from './skill/skill.component';
 import { PersonalityComponent } from './personality/personality.component';
 
-import { Ng2EmojiModule } from 'ng2-emoji';
 import { WritingComponent } from './chat/writing/writing.component';
+import {EmojiModule} from "angular-emojione";
 
 
 @NgModule({
@@ -36,9 +36,9 @@ import { WritingComponent } from './chat/writing/writing.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot(),
 
-    Ng2EmojiModule.forRoot()
+    EmojiModule,
+    NgbModule.forRoot(),
   ],
   providers: [WebSocketService],
   bootstrap: [AppComponent]

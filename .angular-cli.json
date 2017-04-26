@@ -21,7 +21,7 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../node_modules/ng2-emoji/css/ng2-emoji.css"
+        "../node_modules/emojione/extras/css/emojione.min.css"
       ],
       "scripts": [
         "../node_modules/smoothscroll-polyfill/dist/smoothscroll.js"
